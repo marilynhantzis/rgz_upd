@@ -25,7 +25,10 @@
              python -m unittest discover
 
          - name: Check code security with Bandit
-           run: bandit -r . 
+           run: |
+            pip install bandit
+            bandit -r . > bandit_report.txt
+            cat bandit_report.txt
 
      changelog:
        runs-on: ubuntu-latest
