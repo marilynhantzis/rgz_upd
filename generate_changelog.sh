@@ -10,7 +10,7 @@
    # Получаем коммиты после последнего тега
    COMMITS=$(git log $TAG..HEAD --pretty=format:"%s [%h]")
 
-   # Добавляем коммиты в changelog
+   # Добавляем коммиты в changelo
    while IFS= read -r commit; do
        echo "- $commit" >> changelog.md
    done <<< "$COMMITS"
